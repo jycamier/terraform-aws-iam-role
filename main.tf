@@ -36,4 +36,5 @@ resource "aws_iam_role" "lacework_iam_role" {
   name               = local.iam_role_name
   assume_role_policy = data.aws_iam_policy_document.lacework_assume_role_policy[count.index].json
   tags               = var.tags
+  permissions_boundary = var.permissions_boundary
 }
